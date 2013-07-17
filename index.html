@@ -10,6 +10,7 @@
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.4.js"></script>
   <script src="js/libs/ember-1.0.0-rc.6.js"></script>
+  <script src="js/libs/ember-data-0.13.js"></script>
   <script src="js/app.js"></script>
 </head>
 <body>
@@ -34,6 +35,31 @@
       <li>{{item}}</li>
     {{/each}}
     </ul>
+  </script>
+
+  <script type="text/x-handlebars" id="posts">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <table class='table'>
+            <thead>
+              <tr><th>Recent Posts</th></tr>
+            </thead>
+            <tbody>
+              {{#each model}}
+                <tr><td>
+                  {{title}} <small class='muted'>by {{author}}</small>
+                </td></tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="span9">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
   </script>
 
 
